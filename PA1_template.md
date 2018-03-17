@@ -124,11 +124,12 @@ Step 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-ax
 summary2 <- group_by(subset,interval)
 table2 <- summarize(summary2,mean_steps = mean(steps,na.rm = TRUE))
 
-ggplot(table2, aes(x=interval, y=mean_steps)) +
+plot2 <- ggplot(table2, aes(x=interval, y=mean_steps)) +
   geom_line(color = "blue")
+plot2
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot2-1.png)<!-- -->
 
 Step 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -182,7 +183,7 @@ plot3 <- ggplot(table3, aes(x = sum_steps)) +
 plot3
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot3_mean_median-1.png)<!-- -->
 
 ```r
 mean_steps3 <- mean(table3$sum_steps, na.rm = TRUE) 
@@ -243,4 +244,4 @@ plot4 <- ggplot(table4, aes(x=interval, y=mean_steps)) +
 plot4
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot4-1.png)<!-- -->
